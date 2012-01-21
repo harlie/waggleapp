@@ -1,4 +1,6 @@
 Waggle::Application.routes.draw do
+  resources :updates
+
   resources :pets
 
   #get \"users\/show\"

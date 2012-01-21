@@ -1,4 +1,6 @@
 class PetsController < ApplicationController
+  before_filter :authenticate_user!
+  
   # GET /pets
   # GET /pets.json
   def index
@@ -40,7 +42,7 @@ class PetsController < ApplicationController
   # POST /pets
   # POST /pets.json
   def create
-    @pet = Pet.new(params[:pet])
+    @pet = current_user.pets.build(params[:pet])
 
     respond_to do |format|
       if @pet.save
