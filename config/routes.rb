@@ -1,4 +1,6 @@
 Waggle::Application.routes.draw do
+  resources :pets
+
   #get \"users\/show\"
 
   root :to => "home#index"
