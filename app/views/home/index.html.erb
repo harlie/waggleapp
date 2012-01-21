@@ -1,4 +1,16 @@
 <h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
+<% if user_signed_in? %>
+  <h3>Manage your pets</h3>
+  <table>
+    <% unless @pet_list.empty? %>
+      <%= render :partial => 'shared/pet_listing', :collection => @pet_list %>
+    <% end %>
+    <tr><td><%= link_to 'New Pet', new_pet_path %></td></tr>
+    
+  </table>
+<% else %>
+  <%= link_to('Login', new_user_session_path)  %>  
+
+  <%= link_to('Sign up', new_user_registration_path)  %>
+ 
 <% end %>

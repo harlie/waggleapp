@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   def index
-    @users = User.all
+    if (current_user) 
+      @pet_list = current_user.pets
+    end
   end
 end
