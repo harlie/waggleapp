@@ -24,7 +24,7 @@ class UpdatesController < ApplicationController
   # GET /updates/new
   # GET /updates/new.json
   def new
-    @update = Update.new
+    
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,15 +40,20 @@ class UpdatesController < ApplicationController
   # POST /updates
   # POST /updates.json
   def create
-    @update = Update.new(params[:update])
-
+    @pet = Pet.find(params[:pet_id])
+    @update = @pet.updates.build(params[:update])
+    @update.name = current_user.name
+    @update.poster = current_user
+    @user = @pet.user
+    
     respond_to do |format|
       if @update.save
-        format.html { redirect_to @update, notice: 'Update was successfully created.' }
-        format.json { render json: @update, status: :created, location: @update }
+        UpdateMailer.update_email( @user, @update.note).deliver
+        format.html { redirect_to @pet, notice: 'Update was successfully created.' }
+        format.json { render json: @pet, status: :created, location: @pet }
       else
         format.html { render action: "new" }
-        format.json { render json: @update.errors, status: :unprocessable_entity }
+        format.json { render json: @pet.errors, status: :unprocessable_entity }
       end
     end
   end

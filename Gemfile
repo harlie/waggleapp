@@ -39,3 +39,6 @@ gem "guard-cucumber", ">= 0.6.1", :group => :development
 gem "bson_ext", ">= 1.3.1"
 gem "mongoid", ">= 2.3.3"
 gem "devise", ">= 1.5.0"
+
+gem 'carrierwave'
+gem 'mini_magick'

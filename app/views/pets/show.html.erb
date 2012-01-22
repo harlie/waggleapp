@@ -9,7 +9,25 @@
   <b>Birthdate:</b>
   <%= @pet.birthdate %>
 </p>
+<p>
+  <b>Breed</b>
+  <%= @pet.breed %>
+</p>
+<p>
+  <b>Gender:</b>
+  <%= @pet.gender %>
+</p>
 
+<%= link_to 'Edit Profile', edit_pet_path(@pet) %> 
 
-<%= link_to 'Edit', edit_pet_path(@pet) %> |
-<%= link_to 'Back', pets_path %>
+<h3>Walker notes</h3>
+
+<%= render 'shared/update_form' %>
+
+<table>
+  
+  <% unless @updates && @updates.empty? %>
+    <%= render :partial => 'shared/update', :collection => @updates.reverse %>
+   <% end %>
+
+</table>
