@@ -2,8 +2,10 @@ class HomeController < ApplicationController
   def index
     if (current_user) 
       @pet_list = current_user.pets
-      @pet= Pet.find(:first)
-      @news_feed = @pet.updates
+      @client_list = current_user.clientpets
+      @news_feed = Pet.first().updates
+  
+        
     end
   end
 end

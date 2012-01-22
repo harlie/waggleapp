@@ -1,14 +1,29 @@
 <% if user_signed_in? %>
   <div class="six columns">
-  <h3>Manage your pets</h3>
-  <table>
-    <% unless @pet_list.empty? %>
-      <%= render :partial => 'shared/pet_listing', :collection => @pet_list %>
-    <% end %>
-    <tr><td><%= link_to 'New Pet', new_pet_path %></td></tr>
+
     
+  <h3>Manage your clients</h3>
+  <table>
+    <% unless @client_list.empty? %>
+      <%= render :partial => 'shared/pet_listing', :collection => @client_list %>
+  
+    <% end %>
+      
   </table>
-  </div>
+  
+    
+      
+    <h3>Manage your pets</h3>
+    <table>
+ <% unless @pet_list.empty? %>
+        <%= render :partial => 'shared/pet_listing', :collection => @pet_list %>
+      <% end %>
+      <tr><td><%= link_to 'New Pet', new_pet_path %></td></tr>
+
+
+    </table>
+
+    </div>
   <div class="ten columns">
     <h3>Feed</h3>
     <table id="news_feed">

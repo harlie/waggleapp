@@ -54,7 +54,15 @@
 
     </li>
     <li id="info">Coming soon</li>
-    <li id="caretakers">Coming soon</li>
+    <li id="caretakers">
+           <table>
+
+              <% unless @pet.caretakers.empty? %>
+                <%= render :partial => 'shared/caretakers', :collection => @pet.caretakers %>
+               <% end %>
+
+            </table>
+    </li>
   </ul>
 
 
