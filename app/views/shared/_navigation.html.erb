@@ -1,18 +1,27 @@
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>        
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-<% end %>
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Edit account', edit_user_registration_path) %>
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Sign up', new_user_registration_path)  %>
-  </li>
-<% end %>
+<div class="sixteen columns">
+	<div class="seven columns alpha">
+	<h1 class="remove-bottom top" style="margin-top: 30px"><span class="orange">W</span>aggle<span class="orange">A</span>pp</h1>
+	</div>
+	<div class="nine columns omega">
+		<ul id="menu">
+       	    <li><a href="#" name="#box1" class="link">Home</a></li>
+            <li><a href="#" name="#box2" class="link">Download</a></li>
+            <li><a href="#" name="#box3" class="link">FAQ</a></li>
+            <li><a href="#" name="#box4" class="link">Blog</a></li>
+			<li><a href="#" name="#box6" class="link">Contact</a></li>
+    </ul>
+	    <% if user_signed_in? %>
+      
+        <%= link_to('Logout', destroy_user_session_path, :method=>'delete', :id => "login") %>        
+        
+      <% else %>
+       
+        <%= link_to('Login', new_user_session_path, :id => "login")  %>  
+     
+      <% end %>
+      
+	</div>
+</div>
+
+
+

@@ -27,6 +27,7 @@
       <%= stylesheet_link_tag    "base" %>
       <%= stylesheet_link_tag    "skeleton" %>
       <%= stylesheet_link_tag    "layout" %>
+    	<link href='http://fonts.googleapis.com/css?family=Fascinate' rel='stylesheet' type='text/css'>
     
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
@@ -36,9 +37,9 @@
     <div id="container" class="container">
       <header>
         <nav>
-          <ul class="hmenu">
+          
             <%= render 'shared/navigation' %>
-          </ul>
+          
         </nav>
         <%- flash.each do |name, msg| -%>
           <%= content_tag :div, msg, :id => "flash_\#{name}" if msg.is_a?(String) %>

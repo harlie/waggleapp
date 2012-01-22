@@ -27,7 +27,7 @@
   <div class="ten columns">
     <h3>Feed</h3>
     <table id="news_feed">
-     <% unless @news_feed.empty? %>
+     <% unless @news_feed.nil? || @news_feed.empty? %>
         <%= render :partial => 'shared/news_feed', :collection => @news_feed %>
       <% end %>
       </table>

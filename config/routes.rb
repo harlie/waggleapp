@@ -5,9 +5,12 @@ Waggle::Application.routes.draw do
   end
   #get \"users\/show\"
 
-  root :to => "home#index"
+  root :to => "home#home"
 
   devise_for :users
+  namespace :user do
+     root :to => "home#index"
+  end
   resources :users, :only => :show
   match "/images/uploads/*path" => "gridfs#serve"
 
