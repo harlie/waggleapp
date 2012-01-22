@@ -1,1 +1,8 @@
-<tr><td><%= link_to pet_listing.name, pet_listing %></td></tr>
+<tr><td>
+  <div class="thumb">
+       <%= image_tag pet_listing.avatar.url  %>
+
+   </div>
+</td>
+  <td><%= link_to pet_listing.name, pet_listing %></td>
+  </tr>

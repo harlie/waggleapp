@@ -1,33 +1,61 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @pet.name %>
-</p>
+<div class="four columns">
+  <div id="img_container">
+      <%= image_tag @pet.avatar.url %>
 
-<p>
-  <b>Birthdate:</b>
-  <%= @pet.birthdate %>
-</p>
-<p>
-  <b>Breed</b>
-  <%= @pet.breed %>
-</p>
-<p>
-  <b>Gender:</b>
-  <%= @pet.gender %>
-</p>
-
-<%= link_to 'Edit Profile', edit_pet_path(@pet) %> 
-
-<h3>Walker notes</h3>
-
-<%= render 'shared/update_form' %>
-
-<table>
+  </div>
+</div>
+<div class="twelve columns">
+  <h1>
+    <%= @pet.name %>
+  </h1>
+  <p>
+    <b>Birthdate:</b>
+    <%= @pet.birthdate %>
+  </p>
+  <p>
+    <b>Breed</b>
+    <%= @pet.breed %>
+  </p>
+  <p>
+    <b>Gender:</b>
+    <%= @pet.gender %>
+  </p>
   
-  <% unless @updates && @updates.empty? %>
-    <%= render :partial => 'shared/update', :collection => @updates.reverse %>
-   <% end %>
+  <%= link_to 'Edit Profile', edit_pet_path(@pet) %> 
 
-</table>
+</div>
+
+ 
+<div class="sixteen columns">
+<br/>
+  <ul class="tabs">
+    <!-- Give href an ID value of corresponding "tabs-content" <li>'s -->
+    <li><a class="active" href="#log">Log</a></li>
+    <li><a href="#info">More Info</a></li>
+    <li><a href="#caretakers">Walkers</a></li>
+  </ul>
+
+  <ul class="tabs-content">
+    <!-- Give ID that matches HREF of above anchors -->
+    <li class="active" id="log">
+      
+
+      <%= render 'shared/update_form' %>
+
+         <table>
+
+            <% unless @updates && @updates.empty? %>
+              <%= render :partial => 'shared/update', :collection => @updates.reverse %>
+             <% end %>
+
+          </table>
+
+    </li>
+    <li id="info">Coming soon</li>
+    <li id="caretakers">Coming soon</li>
+  </ul>
+
+
+</div>

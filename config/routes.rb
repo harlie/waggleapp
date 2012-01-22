@@ -9,6 +9,7 @@ Waggle::Application.routes.draw do
 
   devise_for :users
   resources :users, :only => :show
+  match "/images/uploads/*path" => "gridfs#serve"
 
 
   # The priority is based upon order of creation:

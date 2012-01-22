@@ -1,6 +1,6 @@
 <%= form_for [@pet, Update.new] do |f| %>
 <div class="field">
-  <%= f.text_area :note %>
+  <%= f.text_area :note,{:rows => 2, :id => "note_textarea"} %>
 </div>
 <div class="actions">
     <%= f.submit "Submit" %>

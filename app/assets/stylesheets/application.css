@@ -26,3 +26,22 @@ header nav ul li {
   border: solid 1px #C66;
 }
 
+#img_container img{
+	height: 100%;
+	width: 100%;
+}
+
+#note_textarea{
+	width: 100%;
+}
+
+.thumb img{
+	height: 80px;
+	width: 80px;
+}
+
+#news_feed td{
+	vertical-align: top !important;
+	padding: 5px;
+	
+}

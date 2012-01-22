@@ -1,5 +1,5 @@
-<h3>Home</h3>
 <% if user_signed_in? %>
+  <div class="six columns">
   <h3>Manage your pets</h3>
   <table>
     <% unless @pet_list.empty? %>
@@ -8,6 +8,15 @@
     <tr><td><%= link_to 'New Pet', new_pet_path %></td></tr>
     
   </table>
+  </div>
+  <div class="ten columns">
+    <h3>Feed</h3>
+    <table id="news_feed">
+     <% unless @news_feed.empty? %>
+        <%= render :partial => 'shared/news_feed', :collection => @news_feed %>
+      <% end %>
+      </table>
+  </div>
 <% else %>
   <%= link_to('Login', new_user_session_path)  %>  
 

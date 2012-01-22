@@ -18,6 +18,7 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
     @update = Update.new
     @updates = @pet.updates
+  
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @pet }
