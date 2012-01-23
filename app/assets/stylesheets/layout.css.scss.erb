@@ -28,7 +28,7 @@ h2{
 }
 /* #Page Styles
 ================================================== */
-#menu				{ float:left;  z-index:10; margin:50px 0px 0 -40px; }
+#menu				{ float:left;  z-index:10; margin:50px 0px 0 -60px; }
 
 #menu a	{ 
 	background:#D55C27; 
@@ -70,11 +70,13 @@ a#login{
 	display:block;
 	float:right;
 	margin:50px 40px 0 0;
+	padding:0 20px 0 0;
 	font-weight:bold;
 	z-index:10;
 	color:#222;
 	text-decoration:none;
 	font-size:13px;
+	background: url(<%=asset_path "nav-login.png" %>) no-repeat right 4px;
 }
 a#login:hover{
 	text-decoration:underline;
@@ -83,10 +85,56 @@ a#login:hover{
 .trans{
 	height: 9px;
 	margin: 0;
-	background: url(../images/trans.png) no-repeat top;
+	background: url(<%=asset_path "trans.png" %>) no-repeat top;
 	opacity: 0.16;	
 }
 
+#social{
+	width:74px;
+	height:32px;
+	margin: -12px 0 0 0;
+	float:right;
+
+}
+#social li{
+	
+	float: left;
+	list-style:none;
+	margin-left:5px;
+}
+#social li a{
+	background: url(<%=asset_path "social.jpg"%>) 0 0 no-repeat !important;
+	cursor:pointer;
+	height:32px;
+	display:block;
+	text-indent:-9999px;
+}
+#social li a.fb{
+	width:32px;
+	background-position:0 0 !important;
+}
+#social li a.fb:hover{
+	background-position: 0 -32px !important;
+}
+#social li a.twit{
+	width:32px;
+	background-position:-32px 0 !important;
+}
+#social li a.twit:hover{
+	background-position: -32px -32px !important;
+}
+.quote{
+	background: url(<%=asset_path "quote-start.png" %>) no-repeat;
+	padding: 0 0 0 20px;
+}
+.quote-end{
+	background: url(<%=asset_path "quote-end.png" %>) no-repeat;
+	width:12px;
+	height:11px;
+	display:block;
+	float:right;
+	margin:2px 120px 0 0;
+}
 /* #Media Queries
 ================================================== */
 
